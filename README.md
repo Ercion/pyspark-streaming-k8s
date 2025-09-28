@@ -58,29 +58,29 @@ Note: If it's your first time setting up, start from Step 2 after cleaning up re
 ## Step 2: Start Minikube
 
 Start your Minikube cluster using the following command:
-
+```bash
 minikube start
-
+```
 ## Step 3: Set Docker Environment to Minikube
 
 Set up Docker to use Minikube's Docker daemon:
-
+```bash
 eval $(minikube docker-env)
-
+```
 ## Step 4: Build Docker Image for PySpark Application
 
 Make sure you're in the root directory of the project. Then, build the Docker image using the following command:
-
+```bash
 docker build --no-cache -t pyspark-streaming-app:latest .
-
+```
 ## Step 5: Deploy the Application on Kubernetes
 
 Apply the necessary Kubernetes configurations:
 
 Create Namespace:
-
+```bash
 kubectl apply -f k8s/namespace.yaml
-
+```
 
 Create Deployment:
 open a new terminal, run:
