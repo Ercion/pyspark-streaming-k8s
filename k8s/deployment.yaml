@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pyspark-streaming
+  namespace: spark-streaming
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pyspark
+  template:
+    metadata:
+      labels:
+        app: pyspark
+    spec:
+      containers:
+        - name: spark
+          image: pyspark-streaming-app:latest
+          imagePullPolicy: Never # <-- Change to Always if you push to a registry
+          volumeMounts:
+            - name: spark-data
+              mountPath: /data
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "1Gi"
+            limits:
+              cpu: "1"
+              memory: "2Gi"
+          securityContext:
+            runAsUser: 0  # Run as root user to avoid permission issues
+            runAsGroup: 0 # Run as root group
+      volumes:
+        - name: spark-data
+          hostPath:
+            path: /data   # <-- this matches your mounted path!
+            type: Directory
+
