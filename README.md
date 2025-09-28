@@ -53,7 +53,7 @@ minikube stop
 minikube delete
 ```
 
-Note: If it's your first time setting up, start from Step 2 after cleaning up resources.
+** Note: ** If it's your first time setting up, start from Step 2 after cleaning up resources.
 
 ## Step 2: Start Minikube
 
@@ -186,17 +186,3 @@ Access Spark UI (if enabled):
 ```bash
 kubectl port-forward service/spark-ui-service 4040:4040 -n spark-streaming
 ```
-
-Step 4: Start Over After Clean-Up
-
-Now that we've cleaned up, you can follow the setup instructions from scratch as outlined above.
-
-Next Steps:
-
-Delete existing resources using the commands mentioned.
-
-Build and load the image into Minikube's Docker daemon.
-
-Reapply all configurations for the deployment and Spark UI.
-
-Monitor the logs and access the Spark UI to verify the application runs correctly.
