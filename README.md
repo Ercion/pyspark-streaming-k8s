@@ -38,9 +38,9 @@ Docker: To build and manage Docker images.
 If you're encountering issues or just want to start fresh, you can clean up the existing resources:
 
 Delete all Kubernetes resources:
-
+```bash
 kubectl delete -f k8s/
-
+```
 
 Delete the Spark Streaming Namespace (if it wasn't automatically deleted):
 
