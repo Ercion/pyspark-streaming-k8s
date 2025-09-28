@@ -3,6 +3,7 @@
 This project demonstrates how to run a PySpark streaming application on a Kubernetes cluster using Minikube. The application reads a dataset (in Parquet format) from a mounted directory, processes the data using PySpark, and outputs the results to the console in a streaming fashion.
 
 # Project Structure
+```bash
 pyspark-streaming-k8s/
 ├── k8s/
 │   ├── namespace.yaml
@@ -12,6 +13,7 @@ pyspark-streaming-k8s/
 ├── streaming_app.py
 └── data/
     └── yellow_tripdata_2025-01.parquet
+```
 
 
 Dockerfile: The Dockerfile for building the PySpark streaming application image.
