@@ -22,7 +22,7 @@ data/: Contains the dataset (in Parquet format) that will be processed by the Py
 
 k8s/: Kubernetes configuration files for namespace, deployment, and Spark UI service.
 
-Prerequisites
+## Prerequisites
 
 Minikube: A local Kubernetes cluster.
 
@@ -30,8 +30,8 @@ kubectl: Command line tool to interact with Kubernetes.
 
 Docker: To build and manage Docker images.
 
-Setup Instructions
-Step 1: Clean Up Existing Resources (Optional but Recommended)
+# Setup Instructions
+## Step 1: Clean Up Existing Resources (Optional but Recommended)
 
 If you're encountering issues or just want to start fresh, you can clean up the existing resources:
 
@@ -53,25 +53,25 @@ minikube delete
 
 Note: If it's your first time setting up, start from Step 2 after cleaning up resources.
 
-Step 2: Start Minikube
+## Step 2: Start Minikube
 
 Start your Minikube cluster using the following command:
 
 minikube start
 
-Step 3: Set Docker Environment to Minikube
+## Step 3: Set Docker Environment to Minikube
 
 Set up Docker to use Minikube's Docker daemon:
 
 eval $(minikube docker-env)
 
-Step 4: Build Docker Image for PySpark Application
+## Step 4: Build Docker Image for PySpark Application
 
 Make sure you're in the root directory of the project. Then, build the Docker image using the following command:
 
 docker build --no-cache -t pyspark-streaming-app:latest .
 
-Step 5: Deploy the Application on Kubernetes
+## Step 5: Deploy the Application on Kubernetes
 
 Apply the necessary Kubernetes configurations:
 
@@ -95,7 +95,7 @@ kubectl apply -f k8s/spark-ui-service.yaml
 
 Note: Step 5 (Image loading into Minikube) has been removed. It is no longer necessary as the Docker image should be available once you build it and use minikube image load or similar commands if needed.
 
-Step 6: Check the Status of Pods
+## Step 6: Check the Status of Pods
 
 Check the status of the deployed pods to ensure everything is running correctly:
 
@@ -104,7 +104,7 @@ kubectl get pods -n spark-streaming
 
 You should see the pod with a status like Running.
 
-Step 7: Access the Spark UI (Optional)
+## Step 7: Access the Spark UI (Optional)
 
 If you've created the Spark UI service, you can port-forward to view the Spark UI:
 
@@ -117,7 +117,7 @@ Now, you can access the Spark UI at:
 
 http://localhost:4040
 
-Step 8: Verify the Streaming Output
+## Step 8: Verify the Streaming Output
 
 To view the output of your streaming application, use:
 
