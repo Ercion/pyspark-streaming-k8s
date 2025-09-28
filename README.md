@@ -53,7 +53,7 @@ minikube stop
 minikube delete
 ```
 
-** Note: ** If it's your first time setting up, start from Step 2 after cleaning up resources.
+**Note:** If it's your first time setting up, start from Step 2 after cleaning up resources.
 
 ## Step 2: Start Minikube
 
@@ -98,8 +98,6 @@ Create Spark UI Service (Optional):
 kubectl apply -f k8s/spark-ui-service.yaml
 ```
 
-Note: Step 5 (Image loading into Minikube) has been removed. It is no longer necessary as the Docker image should be available once you build it and use minikube image load or similar commands if needed.
-
 ## Step 6: Check the Status of Pods
 
 Check the status of the deployed pods to ensure everything is running correctly:
@@ -116,7 +114,7 @@ If you've created the Spark UI service, you can port-forward to view the Spark U
 kubectl port-forward service/spark-ui-service 4040:4040 -n spark-streaming
 ```
 
-Note: If this step doesn’t work, the Spark UI might not be available due to the way the service is configured or other issues with Minikube’s networking setup.
+**Note:** If this step doesn’t work, the Spark UI might not be available due to the way the service is configured or other issues with Minikube’s networking setup.
 
 Now, you can access the Spark UI at:
 
@@ -133,7 +131,7 @@ You should see the results of your PySpark streaming job, such as the counts of 
 
 
 
-Troubleshooting
+## Troubleshooting
 
 Permission Issues: If you encounter permission errors (e.g., "Operation not permitted"), you may need to adjust the permissions on the mounted directory inside the Minikube VM:
 ```bash
@@ -147,7 +145,7 @@ Image Pull Issues: If the image is not found or not pulled, ensure you've built 
 
 minikube image load pyspark-streaming-app:latest
 
-Notes
+**Notes**
 
 The application reads Parquet files in a stream from the /data directory inside the pod.
 
@@ -157,7 +155,7 @@ The deployment is set up with a volume mount (host path) pointing to the /data d
 
 The code does not use checkpoints in this example for simplicity, but this can be added if fault tolerance is needed for long-running jobs.
 
-Clean Up
+**Clean Up**
 
 Once you're done, you can clean up the resources using:
 ```bash
@@ -166,7 +164,7 @@ minikube stop
 minikube delete
 ```
 
-Useful Kubectl and Minikube Commands
+## Useful Kubectl and Minikube Commands
 
 View Pods:
 ```bash
