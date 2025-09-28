@@ -1,8 +1,8 @@
-PySpark Streaming on Kubernetes
+# PySpark Streaming on Kubernetes
 
 This project demonstrates how to run a PySpark streaming application on a Kubernetes cluster using Minikube. The application reads a dataset (in Parquet format) from a mounted directory, processes the data using PySpark, and outputs the results to the console in a streaming fashion.
 
-Project Structure
+# Project Structure
 pyspark-streaming-k8s/
 ├── k8s/
 │   ├── namespace.yaml
