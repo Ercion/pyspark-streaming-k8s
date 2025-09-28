@@ -43,15 +43,15 @@ kubectl delete -f k8s/
 ```
 
 Delete the Spark Streaming Namespace (if it wasn't automatically deleted):
-
+```bash
 kubectl delete namespace spark-streaming
-
+```
 
 Delete the Minikube Cluster (optional):
-
+```bash
 minikube stop
 minikube delete
-
+```
 
 Note: If it's your first time setting up, start from Step 2 after cleaning up resources.
 
